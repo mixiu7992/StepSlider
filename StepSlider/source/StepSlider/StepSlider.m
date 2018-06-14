@@ -361,6 +361,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
 
 - (CGFloat)sliderPosition
 {
+    NSLog(@"%f", (_sliderCircleLayer.position.x + maxRadius) / self.frame.size.width);
     return _sliderCircleLayer.position.x - maxRadius;
 }
 
@@ -371,6 +372,7 @@ void withoutCAAnimation(withoutAnimationBlock code)
 
 - (CGFloat)indexCalculate
 {
+    NSLog(@"%f", self.sliderPosition);
     return self.sliderPosition / (_trackLayer.bounds.size.width / (self.maxCount - 1));
 }
 
@@ -437,12 +439,12 @@ void withoutCAAnimation(withoutAnimationBlock code)
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    [self endTouches];
+//    [self endTouches];
 }
 
 - (void)cancelTrackingWithEvent:(UIEvent *)event
 {
-    [self endTouches];
+//    [self endTouches];
 }
 
 - (void)endTouches
